@@ -2,7 +2,6 @@ import onewire
 import ds18x20
 import time
 import json
-import paho.mqtt.client as mqtt
 
 data = 0
 
