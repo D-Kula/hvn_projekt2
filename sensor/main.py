@@ -10,9 +10,3 @@ with open("config.json","r") as file:
 
 temperature_pin = data['pin']
 read_interval = data['interval']
-
-
-
-
-
-client = mqtt.Client()
