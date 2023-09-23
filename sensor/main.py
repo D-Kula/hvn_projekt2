@@ -1,7 +1,6 @@
-import onewire
-import ds18x20
-import machine
 import time
+import machine
+import onewire, ds18x20
 import json
 
 with open("config.json","r") as file:
@@ -16,9 +15,9 @@ temp = ds18x20.DS18X20(onewire.OneWire(temperature_pin))
 roms = temp.scan()
 
 while True:
-    print('temperatures:', end=' ')
     temp.convert_temp()
     time.sleep_ms(read_interval)
+    print('temperature:', end=' ')
     for rom in roms:
-        print(temp.read_temp(rom), end=' ')
+        print(temp.read_temp(rom), end='\n')
         json.load
