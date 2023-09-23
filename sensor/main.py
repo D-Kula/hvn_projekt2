@@ -6,7 +6,7 @@ import json
 
 with open("config.json","r") as file:
     global data
-    data = file
+    data = json.load(file)
 
 temperature_pin = machine.Pin(data['pin'])
 read_interval = data['interval']
@@ -21,3 +21,4 @@ while True:
     time.sleep_ms(read_interval)
     for rom in roms:
         print(temp.read_temp(rom), end=' ')
+        json.load
