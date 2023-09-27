@@ -22,4 +22,3 @@ while True:
     time.sleep_ms(read_interval)
     print(f"{unit_id[2:]}" + " " + f"{sensor_id[2:]}", end=" ")
     print(temp.read_temp(roms[0]), end="\n")
-
