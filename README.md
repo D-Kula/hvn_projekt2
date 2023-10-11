@@ -1,6 +1,7 @@
 # hvn_projekt2
 A project that implements the use of a DS18B20 temperature probe using a pi pico.
-When powered on the system will begin outputting temperature data over USB-UART.
+When powered on the system will begin outputting temperature data over USB-UART along
+with the picos and temperature probes hardware IDs.
 
 
 Required materials:
