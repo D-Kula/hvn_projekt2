@@ -15,10 +15,18 @@ temp = ds18x20.DS18X20(onewire.OneWire(temperature_pin))
 roms = temp.scan()
 
 unit_id = hex(int.from_bytes(machine.unique_id(), "little"))
-sensor_id = hex(int.from_bytes(roms[0], "little"))
+
+
+def get_id_hex(rom):
+    return f"{hex(int.from_bytes(rom,'little'))[2:]}"
+
 
 while True:
     temp.convert_temp()
     time.sleep_ms(read_interval)
-    print(f"{unit_id[2:]}" + " " + f"{sensor_id[2:]}", end=" ")
-    print(temp.read_temp(roms[0]), end="\n")
+    for rom in roms:
+        print(
+            f"{unit_id[2:]}" + " " + get_id_hex(rom),
+            end=" ",
+        )
+        print(temp.read_temp(roms[0]), end="\n")
