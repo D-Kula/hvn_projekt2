@@ -7,7 +7,7 @@ Required materials:
 ```
 - Raspberry Pi Pico (or Pico W)
 - USB-cabel for Raspberry Pi Pico
-- 1-2 st DS18B20 or equivalent
+- 1-2 DS18B20 or equivalent
 - 1 4.7 kOhm resistor
 - Breadboard and jumper wires
 ```
